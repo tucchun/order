@@ -1,17 +1,25 @@
-const Merge = require('webpack-merge');
+const merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const path = require('path');
 
-module.exports = Merge(CommonConfig, {
+const inline = require('inline-source').sync,
+  fs = require('fs'),
+  htmlpath = path.resolve('./src/index.ejs');
+const html = inline(htmlpath, {
+  compress: true
+});
+fs.writeFileSync(path.resolve('./index.ejs'), html);
+
+module.exports = merge(CommonConfig, {
   module: {
-    rules: [{
-      test: /\.css$/,
-      use: [
-        'postcss-loader'
-      ]
-    }]
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['postcss-loader']
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -38,5 +46,5 @@ module.exports = Merge(CommonConfig, {
     chunkFilename: '[name].[chunkhash].js',
     publicPath: '../',
     path: path.join(__dirname, './dist')
-  },
+  }
 });

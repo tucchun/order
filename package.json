@@ -32,17 +32,31 @@
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.29.0",
+    "inline-source": "^5.2.6",
+    "inline-source-cli": "^1.2.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
+    "redux-devtools": "^3.4.1",
+    "redux-devtools-dock-monitor": "^1.1.2",
+    "redux-devtools-log-monitor": "^1.4.0",
+    "redux-logger": "^3.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.2.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "adaptive.js": "0.0.2",
+    "amfe-flexible": "^2.2.1",
+    "humps": "^2.0.1",
     "lodash": "^4.17.4",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "normalize.css": "^7.0.0",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   }
 }

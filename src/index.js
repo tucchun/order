@@ -1,6 +1,14 @@
-import adaptive from 'adaptive.js';
-import './style.css';
+import React from 'react';
+import { render } from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Root from './containers/Root';
+import configureStore from './store/configureStore';
 
-adaptive.desinWidth = 640;
-adaptive.baseFont = 24;
-adaptive.init();
+const store = configureStore();
+
+render(
+  <Router>
+    <Root store={store} />
+  </Router>,
+  document.getElementById('root')
+);

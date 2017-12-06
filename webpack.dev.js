@@ -1,11 +1,11 @@
-const Merge = require('webpack-merge');
+const merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
-module.exports = Merge(CommonConfig, {
+module.exports = merge(CommonConfig, {
   entry: {
   },
   devtool: 'cheap-module-source-map',

@@ -3,11 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
-    'index': './src/index.js',
-    'vendor': [
-      'react',
-      'react-dom'
-    ]
+    'index': './src/containers/index.js',
+    'vendor': ['react', 'react-dom']
   },
 
   // resolve: {
@@ -16,7 +13,8 @@ module.exports = {
   // },
 
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
@@ -25,12 +23,10 @@ module.exports = {
       }, {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader',
+          'style-loader', 'css-loader',
           // 'postcss-loader'
         ]
-      },
-      {
+      }, {
         test: /\.(jpg|png|gif)$/,
         use: 'file-loader'
       }
@@ -40,7 +36,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.join(__dirname, './src/index.ejs'),
+      template: path.join(__dirname, './index.ejs'),
       chunks: ['index', 'vendor', 'runtime']
     }),
     // new HtmlWebpackPlugin({
@@ -51,7 +47,7 @@ module.exports = {
     // }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: Infinity
+      // minChunks: Infinity
       // filename: 'vendor.[chunkhash].js'
     }),
     new webpack.optimize.CommonsChunkPlugin({
