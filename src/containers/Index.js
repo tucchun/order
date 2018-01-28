@@ -1,14 +1,24 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+// import ReactDom from 'react-dom';
+import {connect} from 'react-redux';
 import Menu from '../components/menu/Menu';
 import MenuContainer from '../components/menu/MenuContainer';
 import MenuItem from '../components/menu/MenuItem';
 import MenuTitle from '../components/menu/MenuTitle';
 import Category from '../components/category/Category';
 import CategoryItem from '../components/category/Item';
+import {
+  requestCategories
+} from '../actions/order';
 import '../style.css';
 
 class Index extends React.Component {
+
+  constructor(props){
+    super(props);
+    const { dispatch } = this.props;
+    dispatch(requestCategories());
+  }
 
   render() {
     return (
@@ -60,5 +70,7 @@ class Index extends React.Component {
   }
 }
 
-ReactDom.render(
-  <Index/>, document.getElementById('root'));
+export default connect()(Index);
+//
+// ReactDom.render(
+//   <Index/>, document.getElementById('root'));

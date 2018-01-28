@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
-    'index': './src/containers/index.js',
+    'index': './src/order.js',
     'vendor': ['react', 'react-dom']
   },
 

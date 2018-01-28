@@ -44,7 +44,7 @@ module.exports = merge(CommonConfig, {
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
-    publicPath: '../',
+    publicPath: './',
     path: path.join(__dirname, './dist')
   }
 });
